@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Spark / Delta local artifacts
+spark-warehouse/
+metastore_db/
+derby.log
+_checkpoints/
+*.crc
+
+# Generated synthetic data (regenerate with the generator, never commit)
+data/
+output/
+
+# Databricks
+.databricks/
+.databrickscfg
+
+# Secrets and local config
+.env
+*.pem
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store

@@ -1,0 +1,37 @@
+[project]
+name = "datalakehouse-practice"
+version = "0.1.0"
+description = "Databricks lakehouse (medallion architecture) for synthetic Costa Rican electronic invoices."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pyspark>=4.0,<5",
+    "pytest>=8",
+    "ruff>=0.6",
+    "faker>=30",
+    "lxml>=5",
+]
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests", "generator"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "W"]
