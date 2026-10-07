@@ -18,6 +18,7 @@ Template for recording what Databricks Free Edition **actually** supports. Every
 | Feature | Phase | Status | Notes |
 |---|---|---|---|
 | Unity Catalog (catalog, schemas, volumes) | 0 | To verify | |
+| Upload files to a volume (UI and `databricks fs cp`) | 1 | To verify | Storage quota to verify |
 | Auto Loader (`cloudFiles`) | 2 | To verify | |
 | Native XML reader (`format("xml")`, `from_xml`) | 2–3 | To verify | Fallback: parse in Python |
 | `MERGE INTO` on Delta | 3–4 | To verify | |

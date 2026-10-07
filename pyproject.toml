@@ -5,16 +5,18 @@ description = "Databricks lakehouse (medallion architecture) for synthetic Costa
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.11"
-dependencies = []
+dependencies = ["faker>=30"]
 
 [project.optional-dependencies]
 dev = [
     "pyspark>=4.0,<5",
     "pytest>=8",
     "ruff>=0.6",
-    "faker>=30",
     "lxml>=5",
 ]
+
+[project.scripts]
+generate-invoices = "lakehouse.generator.cli:main"
 
 [build-system]
 requires = ["setuptools>=69"]
@@ -31,7 +33,7 @@ addopts = "-ra"
 [tool.ruff]
 line-length = 100
 target-version = "py311"
-src = ["src", "tests", "generator"]
+src = ["src", "tests"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP", "W"]
