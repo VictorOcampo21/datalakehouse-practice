@@ -2,8 +2,6 @@
 
 A lakehouse on **Databricks** that ingests **Costa Rican electronic invoices** (XML, Ministerio de Hacienda format), processes them through a **medallion architecture** (Bronze → Silver → Gold) with **PySpark and Spark SQL**, enforces **data quality** rules, models a **star schema**, and publishes KPIs for a business user (an accountant or a small business).
 
-> **Status: work in progress.** Phase 0 (design and repository) and Phase 1 (synthetic data generator) are done. See [Roadmap](#roadmap).
->
 > **All data is synthetic.** It is produced by [a generator in this repo](docs/data-generator.md). No real invoices, taxpayer IDs, names or amounts are used.
 
 ## The business problem
@@ -115,17 +113,6 @@ generate-invoices --invoices 1000 --days 30 --seed 42
 ```
 
 See [docs/data-generator.md](docs/data-generator.md) for the XML structure, the intentional errors and the manifest.
-
-## Roadmap
-
-- [x] **Phase 0:** design, repository, architecture, ADRs, CI
-- [x] **Phase 1:** synthetic invoice generator with configurable error rates
-- [ ] **Phase 2:** Bronze, incremental ingestion with Auto Loader
-- [ ] **Phase 3:** Silver, parsing, data quality rules, quarantine, idempotent `MERGE`
-- [ ] **Phase 4:** Gold, star schema with SCD Type 2 on the issuer dimension
-- [ ] **Phase 5:** security and governance (Unity Catalog grants, masked taxpayer IDs)
-- [ ] **Phase 6:** orchestration, CI/CD deployment, performance tuning
-- [ ] **Phase 7:** dashboard and final documentation
 
 ## License
 
