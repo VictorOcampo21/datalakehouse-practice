@@ -6,12 +6,15 @@ __pycache__/
 venv/
 build/
 dist/
+*.log
 
 # Tooling caches
 .pytest_cache/
 .ruff_cache/
+.mypy_cache/
 .coverage
 htmlcov/
+.ipynb_checkpoints/
 
 # Spark / Delta local artifacts
 spark-warehouse/
@@ -20,9 +23,11 @@ derby.log
 _checkpoints/
 *.crc
 
-# Generated synthetic data (regenerate with the generator, never commit)
+# Generated synthetic data (regenerate with the generator, never commit).
+# Small hand-made XML fixtures for tests live in tests/fixtures/ and are committed.
 data/
 output/
+*.zip
 
 # Databricks
 .databricks/
@@ -30,7 +35,14 @@ output/
 
 # Secrets and local config
 .env
+.env.*
 *.pem
+.git-credentials
+
+# Personal notes and tooling (never part of the repo)
+.claude/
+*.local.md
+interview-practice/
 
 # Editors / OS
 .vscode/
